@@ -39,12 +39,34 @@
     cursor: pointer;
     background: transparent;
     border: none;
+     cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    outline: none;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+/* Animação X quando menu aberto */
+.menu-toggle.is-active .bar:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.menu-toggle.is-active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.is-active .bar:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
 }
 
 .bar {
     height: 3px;
     width: 25px;
-    background-color: rgb(176, 210, 53);
+    background-color: rgb(94, 15, 41);
     margin: 4px 0;
     transition: 0.4s;
 }
@@ -56,19 +78,22 @@
     }
 
     .nav-list {
-        display: none; /* Esconde o menu */
+        display: none;
+        /* Esconde o menu */
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 220px;
+        top: 145px;
         left: 0;
-        background-color: #ffffffe3;
+        background: rgba(253, 253, 253, 0.671);
+        backdrop-filter: blur(5px);
         text-align: center;
         border-radius: 5px;
     }
 
     .nav-list.active {
-        display: flex; /* Mostra o menu quando ativo */
+        display: flex;
+        /* Mostra o menu quando ativo */
     }
 
     .nav-list li {
